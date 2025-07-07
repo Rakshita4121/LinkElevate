@@ -1,0 +1,55 @@
+.scrollComponent{
+    display: flex;
+    justify-content: center;
+}
+
+.createPostContainer{
+    display: flex;
+    height: 10svh;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    padding-inline:0.8rem ;
+    gap: 1.3rem;
+    background-color: snow;
+}
+.createPostContainer > textarea{
+    width:100%;
+}
+.userProfile{
+    border-radius: 100%;
+    height: 60%;
+}
+.Fab{
+    background-color: rgb(153, 45, 254);
+    border-radius: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+
+}
+.Fab > svg{
+    width: fit-content;
+    height: 20px;
+    color: white;
+}
+.textAreaContent{
+    width: 80%;
+    height: 70%;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-inline: 1.5rem;
+    padding-block: 0.8rem;
+    outline: none;
+}
+.uploadButton{
+    position: absolute;
+    right: 0;
+    bottom: -45%;
+    background-color: rgb(43, 67, 202);
+    color: white;
+    border-radius: 10px;
+    padding-inline: 1.2rem;
+    padding-block: 0.8rem;
+    cursor: pointer;
+}

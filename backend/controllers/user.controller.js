@@ -5,6 +5,7 @@ import bcrypt from 'bcrypt'
 import crypto from "crypto";
 import PDFDocument from 'pdfkit';
 import fs from 'fs';
+import Comment from "../models/comments.model.js"
 
 const convertUserDataToPdf=async (userData)=>{
     const doc=new PDFDocument();
@@ -35,8 +36,10 @@ const convertUserDataToPdf=async (userData)=>{
 export const register=async(req,res)=>{
     try{
         const {name,email,password,username}=req.body;
+        console.log("Received body:", req.body);
+
         if(!name|| !email||!password||!username){
-            return res.status(400).jsom({message:"All fields are required"});
+            return res.status(400).json({message:"All fields are required"});
         }
         const user = await User.findOne({
             email
@@ -132,13 +135,15 @@ export const updateUserProfile = async(req,res)=>{
 
 export const getUserAndProfile = async (req,res)=>{
     try{
-        const {token} = req.body;
+        const token = req.headers.authorization?.split(" ")[1]; 
+        console.log(token);// Bearer <token>
         const user=await User.findOne({token:token});
         if(!user){
             return res.status(404).json({message:"User not found"});
         }
         const userProfile=await Profile.findOne({userId:user._id})
         .populate('userId','name email username profilePicture');
+        return res.json({userProfile})
     }catch(error){
         return res.status(500).json({message:error.message})
     }
@@ -172,7 +177,9 @@ export const updateProfileData = async (req,res)=>{
 export const getAllUserProfile = async (req,res)=>{
     try{
         const profiles = await Profile.find().populate('userId','name email username profilePicture');
+        console.log(profiles)
         return res.json({profiles})
+        
     }catch(error){
         return res.status(500).json({message:error.message})
     }
@@ -276,3 +283,5 @@ export const acceptConnectionRequest = async (req,res)=>{
         return res.status(500).json({message:error.message});
     }
 }
+
+
