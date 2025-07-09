@@ -4,16 +4,23 @@ import {React} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import styles from './style.module.css'
+import { subscribeUserToPush } from '../../../utils/usePushNotification';
+import { getAllUsers } from '@/config/redux/action/authentication';
 export default function DashboardLayout ({children}){
+    const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
     const authState = useSelector((state) => state.auth);
 const dispatch=useDispatch()
     const router = useRouter();
     useEffect(()=>{
+
         if(localStorage.getItem("token") == null){
             router.push("/login");
         }
         dispatch(setTokenIsThere())
-    })
+        dispatch(getAllUsers())
+       
+        subscribeUserToPush(token)
+    },[])
     return(
         <>
          <div className="container">

@@ -34,6 +34,13 @@ const userSchema=new mongoose.Schema({
     token:{
         type:String,
         default:''
+    },
+    subscription: {
+        endpoint: String,
+        keys: {
+            p256dh: String,
+            auth: String
+        }
     }
 });
 const User=mongoose.model("User",userSchema);

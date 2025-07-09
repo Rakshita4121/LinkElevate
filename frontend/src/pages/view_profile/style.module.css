@@ -1,0 +1,73 @@
+.container{
+    padding: 1.2rem;
+    
+}
+.backDropContainer{
+    width:100%;
+    height: 30vh;
+    background: url("https://st4.depositphotos.com/1741969/29457/i/450/depositphotos_294571810-stock-photo-blackground-of-abstract-glitter-lights.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 10px;
+
+}
+.backDrop{
+    height: 8em;
+    width: 8em;
+    object-fit: cover;
+    position: absolute;
+    border-radius: 50%;
+    bottom: -32%;
+    left: 8%;
+    text-align: center;
+}
+.profileContainer_details{
+    padding-top: 80px;
+}
+.card{
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 20px;
+}
+.card_profileContainer{
+    display: flex;
+}
+.card_profileContainer >img{
+    width: 3.4rem;
+    height: auto;
+    object-fit: cover;
+}
+
+.connectButton{
+    padding-inline: 0.8rem;
+    padding-block: 0.3rem;
+    background: rgba(218, 233, 247, 0.905);
+    outline: none;
+    border: none;
+    color: rgba(3,93,183,0.905);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.connectedButton{
+    padding-inline: 0.8rem;
+    padding-block: 0.3rem;
+    background: rgba(3,93,183,0.905);
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.workHistoryContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.workHistoryCard{
+    min-width: fit-content;
+    padding-inline: 2.5rem;
+    padding-block: 1rem;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgb(173,173,173);
+}

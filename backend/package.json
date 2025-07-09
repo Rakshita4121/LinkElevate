@@ -20,6 +20,7 @@
     "multer": "^2.0.1",
     "path": "^0.12.7",
     "pdf-creator-node": "^2.3.5",
-    "pdfkit": "^0.17.1"
+    "pdfkit": "^0.17.1",
+    "web-push": "^3.6.7"
   }
 }
