@@ -1,5 +1,5 @@
 import { Base_URL, clientServer } from '@/config';
-import { getAboutUser, getConnectionsRequests, sendConnectionRequest } from '@/config/redux/action/authentication';
+import { getAboutUser, getConnectionsRequests, getMyConnectionRequests, sendConnectionRequest } from '@/config/redux/action/authentication';
 import { getAllPosts } from '@/config/redux/action/postAction';
 import DashboardLayout from '@/layout/DashboardLayout';
 import UserLayout from '@/layout/UserLayout';
@@ -19,6 +19,7 @@ export default function viewProfilePage({userProfile}){
     const getUserPost = async()=>{
         await dispatch(getAllPosts());
         await dispatch(getConnectionsRequests({token:localStorage.getItem("token")}))
+        await dispatch(getMyConnectionRequests({token:localStorage.getItem("token")}))
     }
     const searchParamers = useSearchParams();
     useEffect(()=>{
@@ -34,10 +35,16 @@ export default function viewProfilePage({userProfile}){
                 setIsConnectionNull(false)
             }
         }
-    },[authState.connections])
+        if(authState.connectionRequests.some(user => user.userId._id === userProfile.userId._id)){
+            setIsCurrentUserInConnection(true);
+            if(authState.connectionRequests.find(user => user.userId._id === userProfile.userId._id).status_accepted === true){
+                setIsConnectionNull(false)
+            }
+        }
+    },[authState.connections,authState.connectionRequests])
     useEffect(()=>{
         dispatch(getAboutUser({ token : localStorage.getItem("token") }));
-
+    
         getUserPost();
     },[])
         return(

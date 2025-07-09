@@ -1,18 +1,21 @@
-.container{
-    padding: 1.2rem;
-    
-}
-.backDropContainer{
-    width:100%;
+.container {
+    padding: 1.5rem;
+    background: #fefcff;
+    font-family: "Poppins", sans-serif;
+    border-radius: 20px;
+  }
+  
+  .backDropContainer {
+    width: 100%;
     height: 30vh;
     background: url("https://st4.depositphotos.com/1741969/29457/i/450/depositphotos_294571810-stock-photo-blackground-of-abstract-glitter-lights.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     border-radius: 10px;
-
-}
-.backDrop{
+  }
+  
+  .backDrop {
     height: 8em;
     width: 8em;
     object-fit: cover;
@@ -21,53 +24,103 @@
     bottom: -32%;
     left: 8%;
     text-align: center;
-}
-.profileContainer_details{
-    padding-top: 80px;
-}
-.card{
-    display: flex;
-    gap: 1.2rem;
-    margin-bottom: 20px;
-}
-.card_profileContainer{
-    display: flex;
-}
-.card_profileContainer >img{
-    width: 3.4rem;
-    height: auto;
-    object-fit: cover;
-}
-
-.connectButton{
-    padding-inline: 0.8rem;
-    padding-block: 0.3rem;
-    background: rgba(218, 233, 247, 0.905);
-    outline: none;
-    border: none;
-    color: rgba(3,93,183,0.905);
-    border-radius: 10px;
-    cursor: pointer;
-}
-.connectedButton{
-    padding-inline: 0.8rem;
-    padding-block: 0.3rem;
-    background: rgba(3,93,183,0.905);
-    outline: none;
-    border: none;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-}
-.workHistoryContainer{
+  }
+  
+  .profileContainer_details {
+    padding-top: 5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-}
-.workHistoryCard{
-    min-width: fit-content;
-    padding-inline: 2.5rem;
-    padding-block: 1rem;
+  }
+  
+  .connectButton {
+    background: #f0e6ff;
+    color: #8e2de2;
+    padding: 0.4rem 1rem;
     border-radius: 10px;
-    box-shadow: 10px 10px 15px rgb(173,173,173);
-}
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .connectButton:hover {
+    background: #e0caff;
+  }
+  
+  .connectedButton {
+    background: #8e2de2;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: not-allowed;
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  }
+  
+  .card_profileContainer {
+    display: flex;
+  }
+  
+  .card_profileContainer > img {
+    width: 3.4rem;
+    height: 3.4rem;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .postCard {
+    margin-top: 1rem;
+  }
+  
+  .workHistory {
+    margin-top: 2rem;
+  }
+  
+  .workHistoryContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .workHistoryCard {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(197, 48, 208, 0.08);
+    border: 1px solid #f0e9fc;
+  }
+  
+  .workHistoryCard p:first-child {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #3f3f3f;
+  }
+  
+  .workHistoryCard p:last-child {
+    font-size: 0.9rem;
+    color: gray;
+  }
+  
+  /* svg {
+    transition: all 0.3s ease;
+    stroke: #555;
+  }
+  
+  svg:hover {
+    stroke: #8e2de2;
+  } */
+  

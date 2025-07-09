@@ -36,7 +36,7 @@ export default function Discover() {
                                   <img src={`${Base_URL}/${profile.userId.profilePicture}`} alt="profile"></img>
                                   <div>
                                   <h1>{profile.userId.name}</h1>
-                                  <p>{profile.userId.username}</p>
+                                  <p>@{profile.userId.username}</p>
                                   </div>
                                 </div>
                           )

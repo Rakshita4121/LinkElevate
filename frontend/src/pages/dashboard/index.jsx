@@ -141,18 +141,18 @@ export default function Dashboard() {
   />
   <span>{post.likes || 0}</span>
 </div>
-  <div className={styles.singleOption_optionsContainer} onClick={async()=>{
+  <div className={styles.singleOption_optionsContainer} style={{width:"25px"}} onClick={async()=>{
     await dispatch(getAllCOmments({post_id:post._id}))
   }}>
-    <ChatBubbleOvalLeftIcon className="h-6 w-6 text-gray-600 hover:text-blue-500 cursor-pointer" />
+    <ChatBubbleOvalLeftIcon className={styles.chat} />
   </div>
-  <div className={styles.singleOption_optionsContainer} onClick={()=>{
+  <div className={styles.singleOption_optionsContainer}style={{width:"25px"}} onClick={()=>{
     const text = encodeURIComponent(post.body)
     const url= encodeURIComponent('apnacollege.in')
     const twitterUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
     window.open(twitterUrl,"_blank")
   }}>
-    <ShareIcon className="h-6 w-6 text-gray-600 hover:text-green-500 cursor-pointer" />
+    <ShareIcon className={styles.shareIcon} />
   </div>
 </div>
 

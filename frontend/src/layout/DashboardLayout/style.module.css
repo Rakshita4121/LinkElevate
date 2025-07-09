@@ -18,6 +18,7 @@
     align-items: flex-start;
 }
 .sideBarOption{
+    color:white;
     display: flex;
     align-items: center;
     font-size: 1.2rem;
@@ -36,3 +37,59 @@
     transform: scale(1.05);
     color: blueviolet;
 }
+.rightSidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 300px;
+    color: white;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 1rem;
+    padding: 1.2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  .newsList {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    color: #e2e8f0;
+  }
+  
+  .showMore {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: #a78bfa;
+    cursor: pointer;
+  }
+  
+  .puzzleTitle {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: #fff;
+  }
+  
+  .puzzleText,
+  .connectionsPlayed {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+  }
+  

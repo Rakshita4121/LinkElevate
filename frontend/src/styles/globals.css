@@ -5,6 +5,15 @@
   box-sizing:border-box ;
 }
 
-body{
-  font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), 
+    url('https://img.freepik.com/free-vector/technology-wire-mesh-network-connection-digital-background_1017-28407.jpg?semt=ais_hybrid&w=740') 
+    no-repeat center center fixed;
+  background-size: cover;
+  background-color: #c0c0dc; /* fallback */
+  backdrop-filter: blur(8px); /* won't work directly on body */
+  -webkit-backdrop-filter: blur(8px);
 }
+

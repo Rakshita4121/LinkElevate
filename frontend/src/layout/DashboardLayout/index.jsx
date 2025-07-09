@@ -52,16 +52,29 @@ const dispatch=useDispatch()
           <div className="feedContainer">
               {children}
           </div>
-          <div className="extraContainer">
-                <div>Top Profiles</div>
+          <div className={styles.extraContainer}>
+  <div className={styles.rightSidebar}>
+    <div className={styles.card}>
+      <h3 className={styles.title}>LinkElevate News</h3>
+      <ul className={styles.newsList}>
+        <li>📢 New jobs from Google and TCS</li>
+        <li>🚀 Web3 market sees a 15% surge</li>
+        <li>🧠 AI: Career revolution begins</li>
+        <li>💼 Startup hiring boost post recession</li>
+        <li>🌐 Remote work trends 2025</li>
+      </ul>
+      <p className={styles.showMore}>Show more</p>
+    </div>
 
-                {authState.all_profiles_fetched && authState.all_profiles.map((profile)=>{
-                    return(
-                        <p key={profile._id}>{profile.userId.name || "Unknown User"}</p>
-                        )
-                })}
+    <div className={styles.card}>
+      <h4 className={styles.puzzleTitle}>🎯 Today’s Puzzle</h4>
+      <p className={styles.puzzleText}>Solve in 60s or less!</p>
+      <p className={styles.connectionsPlayed}>3 connections played</p>
+    </div>
+  </div>
+</div>
+
           </div>
-        </div>
         </div>
         </>
     )

@@ -109,6 +109,7 @@ export const loginUser = createAsyncThunk(
                     token:user.token
                 }
             })
+            console.log(response.data.connections)
             return thunkAPI.fulfillWithValue(response.data.connections)
          }catch(error){
             return thunkAPI.rejectWithValue(error.response.data);
@@ -116,13 +117,13 @@ export const loginUser = createAsyncThunk(
      }
  )
 
- export const AcceptConnection = createAsyncThunk(
+ export const acceptConnection = createAsyncThunk(
      "user/acceptConnection",
      async(user,thunkAPI)=>{
          try{
             const response = await clientServer.post("/user/accept_connection_request",{
                 token:user.token,
-                connection_id:user.connectionId,
+                requestId:user.connectionId,
                 action_type:user.action
             })
             return thunkAPI.fulfillWithValue(response.data);
