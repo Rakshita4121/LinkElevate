@@ -15,7 +15,9 @@ export default function NavbarComponent() {
                 {authState.profileFetched && <div>
                     <div style={{display:"flex",gap:"1.25rem"}}>
                         <p>Hey, {authState.user.userId?.name}</p>
-                        <p style={{fontWeight:"bold",cursor:"pointer"}}>Profile</p>
+                        <p style={{fontWeight:"bold",cursor:"pointer"}} onClick={()=>{
+                            router.push("/profile")
+                        }}>Profile</p>
                         <p onClick={
                             ()=>{
                                 localStorage.removeItem("token")

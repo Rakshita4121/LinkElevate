@@ -24,7 +24,7 @@ export default function Discover() {
       <UserLayout>
           <DashboardLayout>
           <div>
-              <h1>Discover</h1>
+              <h1 style={{color:"white"}}>Discover</h1>
               <div className={styles.allUserProfile}>
                   {
                       authState.all_profiles_fetched && authState.all_profiles.map((profile)=>{

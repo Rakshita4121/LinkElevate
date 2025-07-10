@@ -318,3 +318,20 @@ export const getUserProfileAndUserBasedOnUsername = async (req,res)=>{
         return res.status(500).json({message:error.message});
     }
 }
+
+
+export const updateUser = async (req,res)=>{
+    const {token , name} = req.body;
+    try{
+        const user = await User.findOne({token:token});
+        if(!user){
+            return res.status(404).json({message:"User Not found"});
+        }
+        user.name=name;
+        user.save();
+        return res.json({message:"updated"})
+    }catch(error){
+        return res.status(500).json({message:error.message});
+    }
+
+}

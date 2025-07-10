@@ -1,4 +1,4 @@
-import { getMyConnectionRequests ,acceptConnection,getConnectionsRequests} from '@/config/redux/action/authentication'
+import { getMyConnectionRequests ,acceptConnection,getConnectionsRequests, getAboutUser} from '@/config/redux/action/authentication'
 import DashboardLayout from '@/layout/DashboardLayout'
 import UserLayout from '@/layout/UserLayout'
 import React, { useEffect } from 'react'
@@ -12,6 +12,8 @@ export default function MyConnections() {
   const authState = useSelector((state) => state.auth);
   const router = useRouter()
   useEffect(() => {
+    dispatch(getAboutUser({ token : localStorage.getItem("token") }));
+
     dispatch(getConnectionsRequests({ token: localStorage.getItem("token") }));
 
     dispatch(getMyConnectionRequests({ token: localStorage.getItem("token") }));
@@ -26,7 +28,7 @@ export default function MyConnections() {
   return (
     <UserLayout>
       <DashboardLayout>
-        <h1>My Connections</h1>
+        <h2 style={{color:"white",margimBottom:"20px"}}>My Connection Requests</h2>
         {
            authState.connectionRequests?.length == 0 && <h2>No Connection Requests</h2>
         }
@@ -60,7 +62,7 @@ export default function MyConnections() {
             </div>
           )})
         }
-        <h2 style={{marginTop:"30px"}}>My Network</h2>
+        <h2 style={{marginTop:"30px",color:"white",marginBottom:"20px"}}>My Network</h2>
 
         {
           authState.connectionRequests.filter((connection)=> connection.status_accepted != null).map((user,index)=>{

@@ -1,0 +1,196 @@
+.container {
+    padding: 1.5rem;
+    background: #fefcff;
+    font-family: "Poppins", sans-serif;
+    border-radius: 20px;
+  }
+  
+  .backDropContainer {
+    width: 100%;
+    height: 30vh;
+    background: url("https://st4.depositphotos.com/1741969/29457/i/450/depositphotos_294571810-stock-photo-blackground-of-abstract-glitter-lights.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 10px;
+  }
+  
+  /* Profile Picture */
+  .backDrop {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    bottom: -32%;
+    left: 8%;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  /* Overlay (initially hidden) */
+  .backDrop_overlay {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -32%;
+    left: 8%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+    pointer-events: auto;
+  }
+  
+  /* Show overlay on hover */
+  .backDropContainer:hover .backDrop_overlay {
+    opacity: 1;
+  }
+  
+  .profileContainer_details {
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  }
+  
+  .card_profileContainer > img {
+    width: 3.4rem;
+    height: 3.4rem;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .postCard {
+    margin-top: 1rem;
+  }
+  
+  .workHistory {
+    margin-top: 2rem;
+  }
+  
+  .workHistoryContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .workHistoryCard {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(197, 48, 208, 0.08);
+    border: 1px solid #f0e9fc;
+  }
+  
+  .workHistoryCard p:first-child {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #3f3f3f;
+  }
+  
+  .workHistoryCard p:last-child {
+    font-size: 0.9rem;
+    color: gray;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .profileContainer_details {
+      flex-direction: column;
+    }
+  
+    .backDrop_overlay {
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -28%;
+    }
+  
+    .backDrop {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .card {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  .hiddenFileInput {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .profileContainer_details input{
+      outline: none;
+      border-style:none;
+      padding-inline:10px;
+      padding-block:9px
+  }
+  .nameEdit{
+      font-weight: bold;
+      font-size: 1.5rem;
+  }
+
+  .connectButton {
+      margin-top: 20px;
+      width: 160px;
+    background: linear-gradient(to right, #8e2de2, #c530d0);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 14px rgba(197, 48, 208, 0.3);
+  }
+  
+  .connectButton:hover {
+    background: linear-gradient(to right, #c530d0, #8e2de2);
+  }
+  
+  .profileContainer_details textarea{
+      padding: 10px;
+      outline: none;
+      border: none;
+      font-family: "Poopins" !important;
+      font-size: 1.1rem;
+  }
+  .addWorkButton{
+    margin-top: 20px;
+    width: 160px;
+  background: linear-gradient(to right, #8e2de2, #c530d0);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 14px rgba(197, 48, 208, 0.3);
+  }
